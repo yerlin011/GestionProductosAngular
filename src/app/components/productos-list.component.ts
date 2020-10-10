@@ -27,7 +27,7 @@ export class ProductosListComponent{
     ){
 
       this.titulo = "Listado de productos";
-     this._productoService.getProducto().subscribe(
+     this._productoService.getProductos().subscribe(
       result=>{
         
 

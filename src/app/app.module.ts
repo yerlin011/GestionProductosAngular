@@ -11,6 +11,8 @@ import {RouterWithProviders,Routing } from './app.routing';
 // Importar HttpClientModule
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { ProductoDetailComponent } from './components/producto-detail.component';
+import { ProductoEditComponent } from './components/producto-edit.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import {FormsModule} from '@angular/forms';
     HomeComponent,
     ErrorComponent,
     ProductosListComponent,
-    ProductosAddComponent
+    ProductosAddComponent,
+    ProductoDetailComponent,
+    ProductoEditComponent
   ],
   imports: [
     BrowserModule,

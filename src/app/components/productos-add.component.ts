@@ -6,7 +6,7 @@ import { GLOBAL } from '../services/global';
 
 @Component({
 selector:'productos-add',
-templateUrl:'productos-add.component.html',
+templateUrl:'./productos-add.component.html',
 providers:[ProductoService]
 
 })

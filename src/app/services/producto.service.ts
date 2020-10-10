@@ -23,10 +23,15 @@ export class ProductoService{
         this.url = GLOBAL.url;
     }
 
-    public getProducto():Observable<any>{
+    public getProductos():Observable<any>{
 
       return this._http.get(this.url+'productos');
 
+    }
+
+    public getProducto(id):Observable<any>{
+
+        return this._http.get(this.url+'producto/'+id);
     }
 
     public addProducto(producto:Producto):Observable<any>{
