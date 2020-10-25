@@ -12,7 +12,7 @@ import {RouterWithProviders,Routing } from './app.routing';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { ProductoDetailComponent } from './components/producto-detail.component';
-import { ProductoEditComponent } from './components/producto-edit.component';
+import { ProductosEditComponent } from './components/productos-edit.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { ProductoEditComponent } from './components/producto-edit.component';
     ProductosListComponent,
     ProductosAddComponent,
     ProductoDetailComponent,
-    ProductoEditComponent
+    ProductosEditComponent
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,7 @@ export class ProductosListComponent{
 
     public titulo:String;
     public productos:Producto[];
+    public confirmado;
 
     constructor(
      private _route:ActivatedRoute,
@@ -26,28 +27,35 @@ export class ProductosListComponent{
 
     ){
 
-      this.titulo = "Listado de productos";
-     this._productoService.getProductos().subscribe(
-      result=>{
-        
-
-        if(result.code!=200){
-
-          console.log(result);
-        }else{
-          this.productos = result.data;
-
-        }
-     
-        
-      },
-      error=>{
-        console.log(<any>error);
-      }
-
-     );
+     this.confirmado=null;
+     this.titulo = "Listado de productos";
+     this.getListaProductos();
 
     }
+
+    getListaProductos(){
+
+      this._productoService.getProductos().subscribe(
+        result=>{
+          
+  
+          if(result.code!=200){
+  
+            console.log(result);
+          }else{
+            this.productos = result.data;
+  
+          }
+       
+          
+        },
+        error=>{
+          console.log(<any>error);
+        }
+  
+       );
+    }
+
 
 
     ngOnInit(){
@@ -55,7 +63,36 @@ export class ProductosListComponent{
         console.log(this.titulo);
     }
 
+    borrarConfirm(id){
+      this.confirmado = id;
+    }
 
+    cancelarConfirm(){
 
+      this.confirmado = null;
+    }
+
+   onDeleteProducto(id){
+
+      this._productoService.deleteProducto(id).subscribe(
+        result=>{
+
+            if(result.code==200){
+
+              this.getListaProductos();
+            }else{
+              
+              alert("Ocurrio un problema, el producto no se pudo eliminar!");
+
+            }
+        },
+        error=>{
+          console.log(<any>error);
+
+        }
+        
+      
+        );
+      }
 
 }

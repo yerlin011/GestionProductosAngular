@@ -18,6 +18,7 @@
 
     <input type="text" #precio="ngModel" name="precio" [(ngModel)]="producto.precio" class="form-control" required pattern="[0-9]+">
 
+    
     <label>Imagen</label>
     <input type="file" name="imagen" class="form-control" (change)="fileChangeEvent($event)">
     <br/>

@@ -40,7 +40,7 @@ export class ProductosAddComponent{
 
       console.log(this.producto);
 
-      if(this.fileToUpload.length>=1){
+      if(this.fileToUpload && this.fileToUpload.length>=1){
 
         this._productoService.makeFileRequest(GLOBAL.url+'upload-file',[],
         this.fileToUpload).then((result)=>{

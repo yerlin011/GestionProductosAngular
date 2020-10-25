@@ -46,6 +46,22 @@ export class ProductoService{
 
     }
 
+    public editProducto(id, producto:Producto):Observable<any>{
+
+        let json = JSON.stringify(producto);
+
+        let params= 'json='+json;
+        let headers= new HttpHeaders({'Content-Type':'application/x-www-form-urlencoded'});
+
+        return this._http.post(this.url+'update-producto/'+id,params,{headers:headers});
+
+    }
+
+    public deleteProducto(id):Observable<any>{
+
+        return this._http.get(this.url+'delete-producto/'+id);
+    }
+
     public makeFileRequest(url:string,params:Array<string>, files:Array<File>){
 
         return new Promise((resolve,reject)=>{
