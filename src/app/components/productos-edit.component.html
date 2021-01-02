@@ -19,7 +19,7 @@
         <input type="text" #precio="ngModel" name="precio" [(ngModel)]="producto.precio" class="form-control" required pattern="[0-9]+">
     
         <div *ngIf="is_edit">
-            <img src="http://localhost/cursoAngular-Backend/uploads/{{producto.imagen}}" style="width: 70px;">
+            <img src="http://localhost/APIREST-GestionProductos/uploads/{{producto.imagen}}" style="width: 70px;">
         </div>
         <label>Imagen</label>
         <input type="file" name="imagen" class="form-control" (change)="fileChangeEvent($event)">

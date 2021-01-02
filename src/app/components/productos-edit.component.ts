@@ -21,7 +21,7 @@ export class ProductosEditComponent{
     public resultUpload:any;
     public is_edit:boolean;
 
-    public prueba;
+ 
 
 
     constructor(private _productoService:ProductoService,private _router:Router,
@@ -113,7 +113,8 @@ export class ProductosEditComponent{
                 response=>{
         
                     if(response.code == 200){
-                       this.prueba =  this._router.navigate(['/producto',id]);
+                    
+                        this._router.navigate(['/producto',id]);
 
                      
         

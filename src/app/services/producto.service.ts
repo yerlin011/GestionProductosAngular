@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient,HttpResponse, HttpHeaders} from '@angular/common/http';
-import 'rxjs/add/operator/map';
-import {Observable} from 'rxjs/observable';
+//import 'rxjs/add/operator/map';
+import {Observable} from 'rxjs';
 import {Producto} from '../components/models/producto';
 import {GLOBAL} from './global';
 

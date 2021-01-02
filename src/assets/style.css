@@ -94,6 +94,10 @@
     margin:0px auto;
     display: block;
 }
+ #zoom:hover{ 
+    
+    transform: scale(1.1);
+}
 .imagen_relleno{
     background: #ccc;
     width:100%;
