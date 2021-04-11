@@ -40,6 +40,16 @@ export class ProductosEditComponent{
 
     }
 
+    /**
+
+ * Permite coordinar las acciones a seguir, cuando se hace submit en el formulario de editar productos
+
+ * 
+
+ * @return  {void}
+
+ */
+
     onSubmit(){
 
         console.log(this.producto);
@@ -54,7 +64,7 @@ export class ProductosEditComponent{
               this.resultUpload =result;
   
               this.producto.imagen = this.resultUpload.file;
-              this.uploadProducto();
+              this.editProducto();
   
   
            },
@@ -70,14 +80,22 @@ export class ProductosEditComponent{
   
         }else{
   
-          this.uploadProducto();
+          this.editProducto();
   
         }
   
 
     }
 
+ /**
 
+ * Permite obtener datos de un producto, a partir del id pasado como parametro en la url
+
+ * 
+
+ * @return  {void}
+
+ */
 
     getProducto(){
         this._route.params.forEach((params:Params)=>{
@@ -103,7 +121,17 @@ export class ProductosEditComponent{
       
     }
 
-    uploadProducto(){
+ /**
+
+ * Permite editar los datos de un producto, a partir del id pasado como parametro en la url
+
+ * 
+
+ * @return  {void}
+
+ */
+
+    editProducto(){
 
             this._route.params.forEach((params:Params)=>{
             var id = params['id'];
@@ -136,7 +164,15 @@ export class ProductosEditComponent{
     
        }
        
+/**
 
+ * Obtiene el archivo o fichero a subir
+
+ * @param  {any}
+
+ * @return  {void}
+
+ */
     fileChangeEvent(fileInput:any){
 
         this.fileToUpload = <Array<File>> fileInput.target.files;

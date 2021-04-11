@@ -23,17 +23,47 @@ export class ProductoService{
         this.url = GLOBAL.url;
     }
 
+    /**
+
+ * Obtiene lista de todos los productos disponibles, por medio de peticion Get a la url de la API consultada
+
+ * 
+
+ * @return  {Observable}
+
+ */
+
     public getProductos():Observable<any>{
 
       return this._http.get(this.url+'productos');
 
     }
 
+     /**
+
+ * Obtiene un producto especifico, por medio de peticion Get pasando un id como parametro a la url de la API consultada
+
+ * @param  {Observable} {id} 
+
+ * @return  {Observable}
+
+ */
+
     public getProducto(id):Observable<any>{
 
         return this._http.get(this.url+'producto/'+id);
     }
 
+      /**
+
+ * Agrega un nuevo producto, por medio de peticion Post pasando los valores en formato json 
+   como parametros en la url de la API utilizada
+
+ * @param  {Producto} {producto} 
+
+ * @return  {Observable}
+
+ */
     public addProducto(producto:Producto):Observable<any>{
 
         let json = JSON.stringify(producto);
@@ -45,6 +75,16 @@ export class ProductoService{
         return this._http.post(this.url+'productos',params,{headers:headers});
 
     }
+        /**
+
+ * Edita los datos de un producto, por medio de peticion Post pasando el id y los valores en formato json 
+   como parametros en la url de la API utilizada
+ * @param  {any} {id}  
+ * @param  {Producto} {producto} 
+
+ * @return  {Observable}
+
+ */
 
     public editProducto(id, producto:Producto):Observable<any>{
 
@@ -57,10 +97,32 @@ export class ProductoService{
 
     }
 
+        /**
+
+ * Elimina un producto, por medio de peticion Get pasando el id 
+   como parametro en la url de la API utilizada
+
+ * @param  {any} {id}  
+ 
+ * @return  {Observable}
+
+ */
+
     public deleteProducto(id):Observable<any>{
 
         return this._http.get(this.url+'delete-producto/'+id);
     }
+
+
+        /**
+
+ * Envia el archivo a guardar, por medio de peticion Post a la url de la API indicada como parametro
+ * @param  {string} {url}  
+ * @param  {Array<string>} {params} 
+ * @param  {Array<File>} {files} 
+ * @return  {Promise}
+
+ */
 
     public makeFileRequest(url:string,params:Array<string>, files:Array<File>){
 
@@ -89,9 +151,6 @@ export class ProductoService{
             xhr.open("POST",url,true);
             xhr.send(formData);
         });
-
-
-
 
     }
 

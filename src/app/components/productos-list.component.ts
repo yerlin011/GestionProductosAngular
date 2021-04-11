@@ -33,6 +33,16 @@ export class ProductosListComponent{
 
     }
 
+    /**
+
+ * Permite listar todos los productos disponibles
+
+ * 
+
+ * @return  {void}
+
+ */
+
     getListaProductos(){
 
       this._productoService.getProductos().subscribe(
@@ -63,14 +73,44 @@ export class ProductosListComponent{
         console.log(this.titulo);
     }
 
+    /**
+
+ * Permite mostrar los botones para confirmar o cancelar el borrado de un producto
+
+ * @param  {any}  {id}
+
+ * @return {void}
+
+ */
+
     borrarConfirm(id){
       this.confirmado = id;
     }
+
+    /**
+
+ * Permite cancelar el borrado de un producto
+
+ * 
+
+ * @return {void}
+
+ */
 
     cancelarConfirm(){
 
       this.confirmado = null;
     }
+
+     /**
+
+ * Permite el borrado de un producto
+
+ * 
+
+ * @return {void}
+
+ */
 
    onDeleteProducto(id){
 

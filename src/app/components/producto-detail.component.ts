@@ -35,8 +35,17 @@ export class ProductoDetailComponent{
         this.getProducto();
     }
 
+ /**
 
+ * Permite obtener datos de un producto, a partir del id pasado como parametro en la url
+
+ * 
+
+ * @return  {void}
+
+ */
     getProducto(){
+        
     this._route.params.forEach((params:Params)=>{
     var id = params['id'];
 

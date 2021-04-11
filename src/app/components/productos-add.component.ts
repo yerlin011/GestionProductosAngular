@@ -36,6 +36,17 @@ export class ProductosAddComponent{
 
     }
 
+      /**
+
+ * Permite coordinar las acciones a seguir, cuando se hace submit en el formulario de crear productos
+
+ * 
+
+ * @return  {void}
+
+ */
+
+
    onSubmit(){
 
       console.log(this.producto);
@@ -74,6 +85,18 @@ export class ProductosAddComponent{
       
    }
 
+   
+ /**
+
+ * Permite agregar un nuevo producto
+
+ * 
+
+ * @return  {void}
+
+ */
+
+
    saveProducto(){
 
     this._productoService.addProducto(this.producto).subscribe(
@@ -97,6 +120,16 @@ export class ProductosAddComponent{
       );
 
    }
+
+   /**
+
+ * Obtiene el archivo o fichero a subir
+
+ * @param  {any}
+
+ * @return  {void}
+
+ */
    
    fileChangeEvent(fileInput:any){
 
